@@ -1,0 +1,223 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.tab {
+    flex-grow: 1;
+    padding: 15px 0;
+    text-align: center;
+    border: none;
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: #007bff;
+}
+
+.tab:hover {
+    background-color: #777;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 960px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.app-container {
+    display: none;
+    width: 100%;
+}
+
+.app-container.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tic-Tac-Toe Styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    font-size: 2em;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cell:hover {
+    background-color: #ccc;
+}
+
+.message {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#restart-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#restart-btn:hover {
+    background-color: #218838;
+}
+
+/* Notes Styles */
+#notes-container {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.note-list {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+}
+
+.note-list h3 {
+    margin-top: 0;
+}
+
+#previous-notes {
+    list-style: none;
+    padding: 0;
+}
+
+#previous-notes li {
+    padding: 8px 0;
+    font-size: 12pt;
+    font-family: "Times New Roman", Times, serif;
+    cursor: pointer;
+}
+
+#previous-notes li:hover {
+    background-color: #eee;
+}
+
+.note-editor {
+    width: 70%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#note-text {
+    flex-grow: 1;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 12pt;
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+#new-note-btn, #save-note-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#new-note-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+#new-note-btn:hover {
+    background-color: #0056b3;
+}
+
+#save-note-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+#save-note-btn:hover {
+    background-color: #218838;
+}
+
+/* Calculator Styles */
+.calculator {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#display {
+    padding: 15px;
+    font-size: 2em;
+    text-align: right;
+    border: none;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.buttons button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buttons button:hover {
+    background-color: #d0d0d0;
+}
+
+.buttons button:active {
+    background-color: #ccc;
+}
