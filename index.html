@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Tool PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <nav class="tabs">
+            <button id="tic-tac-toe-tab" class="tab active">Tic-Tac-Toe</button>
+            <button id="notes-tab" class="tab">Notes</button>
+            <button id="calculator-tab" class="tab">Calculator</button>
+        </nav>
+    </header>
+    <main>
+        <div id="tic-tac-toe-container" class="app-container active">
+            <div class="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="message"></div>
+            <button id="restart-btn">Restart</button>
+        </div>
+
+        <div id="notes-container" class="app-container">
+            <aside class="note-list">
+                <h3>Previous Notes</h3>
+                <ul id="previous-notes"></ul>
+            </aside>
+            <div class="note-editor">
+                <textarea id="note-text" placeholder="Start typing your note..."></textarea>
+                <button id="new-note-btn">New Note</button>
+                <button id="save-note-btn" style="display:none;">Save Note</button>
+                <input type="hidden" id="current-note-index">
+            </div>
+        </div>
+
+        <div id="calculator-container" class="app-container">
+            <div class="calculator">
+                <input type="text" id="display" disabled>
+                <div class="buttons">
+                    <button onclick="clearDisplay()">C</button>
+                    <button onclick="deleteLast()">DEL</button>
+                    <button onclick="appendOperator('/')">/</button>
+                    <button onclick="appendOperator('*')">*</button>
+
+                    <button onclick="appendNumber('7')">7</button>
+                    <button onclick="appendNumber('8')">8</button>
+                    <button onclick="appendNumber('9')">9</button>
+                    <button onclick="appendOperator('-')">-</button>
+
+                    <button onclick="appendNumber('4')">4</button>
+                    <button onclick="appendNumber('5')">5</button>
+                    <button onclick="appendNumber('6')">6</button>
+                    <button onclick="appendOperator('+')">+</button>
+
+                    <button onclick="appendNumber('1')">1</button>
+                    <button onclick="appendNumber('2')">2</button>
+                    <button onclick="appendNumber('3')">3</button>
+                    <button onclick="calculate()">=</button>
+
+                    <button onclick="appendNumber('0')">0</button>
+                    <button onclick="appendDecimal()">.</button>
+                    <button onclick="calculateSquareRoot()">√</button>
+                    <button onclick="calculateExponent()">^</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
